@@ -10,6 +10,14 @@
   <name>com.sonar.maven</name>
   <url>http://maven.apache.org</url>
   
+  <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <sonar.host.url>http://3.15.196.118:9000</sonar.host.url>
+  <sonar.login>admin</sonar.login>
+  <sonar.password>admin</sonar.password>
+  </properties>
+
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
