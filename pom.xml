@@ -32,6 +32,21 @@
     </dependency>
   </dependencies>
   
+  <plugins>
+          <plugin>
+              <groupId>org.owasp</groupId>
+              <artifactId>dependency-check-maven</artifactId>
+              <version>6.1.6</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>check</goal>
+                      </goals>
+                  </execution>
+              </executions>
+            </plugin>
+  </plugins>
+  
   <distributionManagement>
     <snapshotRepository>
        <id>nexus</id>
