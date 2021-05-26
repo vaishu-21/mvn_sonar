@@ -30,6 +30,11 @@
      <version>6.1.6</version>
      <type>maven-plugin</type>
     </dependency>
+    <dependency>
+      <groupId>us.springett</groupId>
+      <artifactId>threatmodel-sdk</artifactId>
+      <version>1.0.0</version>
+    </dependency>
   </dependencies>
   
   <build>
