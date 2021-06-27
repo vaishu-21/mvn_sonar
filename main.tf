@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  // credentials = file("terraform-project-318114-b9c816aa24cd.json")
+ <!-- credentials = file("terraform-project-318114-b9c816aa24cd.json") -->
   credentials = "${file("./creds/serviceaccount.json")}"
 
   project = "terraform-project-318114"
