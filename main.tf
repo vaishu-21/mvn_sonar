@@ -17,10 +17,10 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network" {
-  name = "terraform-network2"
+  name = "terraform-network"
 }
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance2"
+  name         = "terraform-instance1"
   machine_type = "f1-micro"
 
   boot_disk {
