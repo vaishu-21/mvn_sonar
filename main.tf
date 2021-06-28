@@ -42,8 +42,9 @@ resource "google_compute_instance" "vm_instance" {
     access_config {
     }
   }
-  
- metadata_startup_script = "echo hi > /test.txt"
+ 
+ ## create a test.txt in home directory once vm instance created successfully.
+ metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
 
 }
 
