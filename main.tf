@@ -46,7 +46,7 @@ resource "google_compute_instance" "vm_instance" {
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
  ## metadata_startup_script = "sudo apt-get -y update; sudo apt-get -y dist-upgrade;sudo apt-get -y install nginx"
-    metadata_startup_script = " cp /var/jenkins_home/workspace/terraform_demo/target/com.sonar.maven-0.0.3-SNAPSHOT.jar ."
+    metadata_startup_script = " cp /var/jenkins_home/workspace/terraform_demo/target/com.sonar.maven-0.0.3-SNAPSHOT.jar /home/ubuntu"
 
 }
 
