@@ -63,3 +63,5 @@ resource "google_compute_firewall" "default" {
 output "ip" {
   value = google_compute_instance.vm_instance.network_interface.0.network_ip
 }
+
+ metadata_startup_script = "echo hi > /test.txt"
