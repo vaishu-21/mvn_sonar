@@ -16,6 +16,13 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
+// Adding SSH Public Key Project Wide
+resource "google_compute_project_metadata_item" "ssh-keys" {
+  key   = "ssh-keys"
+  value = "${var.public_key}"
+}
+
+
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
 }
