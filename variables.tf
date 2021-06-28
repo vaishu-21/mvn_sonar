@@ -1,0 +1,5 @@
+// PROJECT Variables
+
+variable "public_key" {
+  default = "sssmith:ssh-rsa AAAAB3bba3DigcNKEpL7GAEln9/BcvRMqJHyQMxt82Wq40DvjL47pSXx81bAYJIrasGBWkgyhP7hJhbQXKki0q2G+E+ykJkZgdqADKUKBmrRivkf/FgChZpEuMIOLIDwtpHYba2IfAgnEGsijCavQVc9+VO1rhvnevYXZlNL480f1JZec4x37V5KO25k49kZaK5F2hVhyh8uo9cJixE0HI0pfbZQkICAzBfX9Jk1/+7y3HapFHpKpjYCDSie8PAysFQRR0zUiIfRR7MMMpFglJQ3OGFtmb6X5ptC9qwGIdxw983kiIFncbyKCgv ssumner@SJCMACW11TG8WL"
+}
