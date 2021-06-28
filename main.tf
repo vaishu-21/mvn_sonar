@@ -42,6 +42,9 @@ resource "google_compute_instance" "vm_instance" {
     access_config {
     }
   }
+  
+ metadata_startup_script = "echo hi > /test.txt"
+
 }
 
 resource "google_compute_firewall" "default" {
@@ -63,5 +66,3 @@ resource "google_compute_firewall" "default" {
 output "ip" {
   value = google_compute_instance.vm_instance.network_interface.0.network_ip
 }
-
- metadata_startup_script = "echo hi > /test.txt"
