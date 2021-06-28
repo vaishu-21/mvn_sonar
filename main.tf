@@ -45,6 +45,8 @@ resource "google_compute_instance" "vm_instance" {
  
  ## create a test.txt in home directory once vm instance created successfully.
  metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
+ metadata_startup_script = "sudo apt-get -y update; sudo apt-get -y dist-upgrade ;
+sudo apt-get -y install nginx"
 
 }
 
