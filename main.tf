@@ -32,7 +32,7 @@ resource "google_service_account_key" "vmkey" {
 
 resource "local_file" "vmkeyfile" {
     content = "${google_service_account_key.vmkey.private_key}"
-    filename = "./vmprivatekey"
+    filename = "/home/ubuntu/vmprivatekey"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -56,7 +56,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
  
-  provisioner "file" {
+ /* provisioner "file" {
   source = "first.txt"
   destination = "/home/ubuntu/first.txt"
 
@@ -67,7 +67,7 @@ resource "google_compute_instance" "vm_instance" {
     private_key = "${file("./vmprivatekey")}"
     host        = "${google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip}"
   }
-  }
+  } */
 
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
