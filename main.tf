@@ -23,7 +23,7 @@ resource "google_compute_project_metadata_item" "ssh-keys" {
 }
 
 data "google_service_account" "vmaccount" {
-    account_id = "terraform-vm-sa"
+    account_id = "terraform-project-318114"
 }
 
 resource "google_service_account_key" "vmkey" {
