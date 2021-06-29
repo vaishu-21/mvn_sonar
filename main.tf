@@ -40,10 +40,11 @@ resource "google_compute_instance" "vm_instance" {
   network_interface {
     network = google_compute_network.vpc_network.name
     access_config {
+      ### Include this section to give the VM an external ip address
     }
   }
  
- /* provisioner "file" {
+  provisioner "file" {
   source = "first.txt"
   destination = "/home/ubuntu/first.txt"
 
@@ -51,9 +52,9 @@ resource "google_compute_instance" "vm_instance" {
     type = "ssh"
     user = "ubuntu"
     private_key = "${var.public_key}"
-    host        = "${self.ip}"
-  } 
-}*/
+    host        = "${google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip}"
+  }}
+
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
  ## metadata_startup_script = "sudo apt-get -y update; sudo apt-get -y dist-upgrade;sudo apt-get -y install nginx"
