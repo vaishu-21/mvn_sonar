@@ -56,7 +56,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
  
- provisioner "file" {
+/* provisioner "file" {
   source = "first.txt"
   destination = "/home/ubuntu/first.txt"
 
@@ -68,7 +68,8 @@ resource "google_compute_instance" "vm_instance" {
     host        = "${google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip}"
   }
   }
-
+*/
+  
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
  ## metadata_startup_script = "sudo apt-get -y update; sudo apt-get -y dist-upgrade;sudo apt-get -y install nginx"
