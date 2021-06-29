@@ -43,7 +43,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
  
-  provisioner "file" {
+ /* provisioner "file" {
   source = "first.txt"
   destination = "/home/ubuntu/first.txt"
 
@@ -52,12 +52,13 @@ resource "google_compute_instance" "vm_instance" {
     user = "ubuntu"
     private_key = "${var.public_key}"
     host        = "${self.ip}"
-  }
+  } */
 }
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
  ## metadata_startup_script = "sudo apt-get -y update; sudo apt-get -y dist-upgrade;sudo apt-get -y install nginx"
  ##   metadata_startup_script = " cp /var/jenkins_home/workspace/terraform_demo/target/com.sonar.maven-0.0.3-SNAPSHOT.jar /home/ubuntu"
+ metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && echo '<!doctype html><html><body><h1>Hello from Terraform on Google Cloud!</h1></body></html>' | sudo tee /var/www/html/index.html"
 
 }
 
@@ -79,4 +80,8 @@ resource "google_compute_firewall" "default" {
 
 output "ip" {
   value = google_compute_instance.vm_instance.network_interface.0.network_ip
+}
+
+output "public_ip" {
+  value = google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip
 }
