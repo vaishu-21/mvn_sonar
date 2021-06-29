@@ -51,7 +51,7 @@ resource "google_compute_instance" "vm_instance" {
     type = "ssh"
     user = "ubuntu"
     private_key = "${var.public_key}"
-    host        = "${self.public_dns}"
+    host        = "${self.public_ip}"
   }
 }
  ## create a test.txt in home directory once vm instance created successfully.
