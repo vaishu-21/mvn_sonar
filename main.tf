@@ -64,7 +64,7 @@ resource "google_compute_instance" "vm_instance" {
     type = "ssh"
     user = "ubuntu"
     ##private_key = "${var.public_key}" 
-    private_key = "${file("./creds/ubuntu6.ppk")}"
+    private_key = "${file("./ubuntu6.ppk")}"
     host        = "${google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip}"
   }
   }
