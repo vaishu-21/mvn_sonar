@@ -56,7 +56,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
  
- /* provisioner "file" {
+ provisioner "file" {
   source = "first.txt"
   destination = "/home/ubuntu/first.txt"
 
@@ -64,10 +64,10 @@ resource "google_compute_instance" "vm_instance" {
     type = "ssh"
     user = "ubuntu"
     ##private_key = "${var.public_key}" 
-    private_key = "${file("./vmprivatekey")}"
+    private_key = "${file("/home/ubuntu/ubuntu6.ppk")}"
     host        = "${google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip}"
   }
-  } */
+  }
 
  ## create a test.txt in home directory once vm instance created successfully.
  ## metadata_startup_script = "echo 'this is test file' > /home/ubuntu/test.txt"
