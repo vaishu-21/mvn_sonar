@@ -22,6 +22,18 @@ resource "google_compute_project_metadata_item" "ssh-keys" {
   value = "${var.public_key}"
 }
 
+data "google_service_account" "vmaccount" {
+    account_id = "terraform-vm-sa"
+}
+
+resource "google_service_account_key" "vmkey" {
+  service_account_id = "${data.google_service_account.vmaccount.name}"
+}
+
+resource "local_file" "vmkeyfile" {
+    content = "${google_service_account_key.vmkey.private_key}"
+    filename = "./vmprivatekey"
+}
 
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
