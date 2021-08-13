@@ -94,7 +94,7 @@
             <plugin>
 	               <groupId>br.com.softplan.security.zap</groupId>
 	               <artifactId>zap-maven-plugin</artifactId>
-	               <version>${zap-maven-plugin.version}</version>
+	               <version>1.2.1-0</version>
 	               <configuration>
 		               <zapPort>8080</zapPort>
 		               <targetUrl>http://34.86.51.193:8098/rest/demo</targetUrl>
