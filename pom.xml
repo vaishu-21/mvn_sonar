@@ -91,17 +91,27 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+        <!--    <plugin>
                 <groupId>br.com.softplan.security.zap</groupId>
                 <artifactId>zap-maven-plugin</artifactId>
                 <version>1.2.1-0</version>
                 <configuration>
                     <!-- If ZAP is running on localhost, there is no need to define zapHost -->
-                    <zapHost>zap</zapHost>
+                <!--    <zapHost>zap</zapHost>
                     <zapPort>8080</zapPort>
                     <targetUrl>http://34.86.51.193:8098/rest/demo</targetUrl>
                 </configuration>
-            </plugin>    
+            </plugin>      -->
+            <plugin>
+	               <groupId>br.com.softplan.security.zap</groupId>
+	               <artifactId>zap-maven-plugin</artifactId>
+	               <version>${zap-maven-plugin.version}</version>
+	               <configuration>
+		               <zapPort>8080</zapPort>
+		               <targetUrl>http://34.86.51.193:8098/rest/demo</targetUrl>
+		               <shouldRunWithDocker>true</shouldRunWithDocker>
+                </configuration>
+            </plugin>
   </plugins>
   </build> 
   <reporting>
