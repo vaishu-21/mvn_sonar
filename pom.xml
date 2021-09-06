@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <sonar.host.url>http://34.86.51.193:9000</sonar.host.url>
+    <sonar.host.url>http://20.204.10.240:9000</sonar.host.url>
     <sonar.login>admin</sonar.login>
     <sonar.password>admin123</sonar.password>
   </properties>
@@ -44,7 +44,7 @@
     <snapshotRepository>
        <id>nexus</id>
       <!-- <url>http://34.72.104.220:8081/nexus/content/repositories/snapshots</url> -->
-           <url>http://34.86.51.193:8081/repository/maven-snapshots</url>
+           <url>http://20.204.10.240:8081/repository/maven-snapshots</url>
     </snapshotRepository>
     <repository>
       <id>nexus</id>
